@@ -1,10 +1,8 @@
 package example;
 
 import org.openqa.selenium.By;
-//import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-//import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -35,7 +33,7 @@ public class TC002 extends InitializationClass{
         langElem.selectByValue("ta");
         System.out.println("Modified Option value : " + langElem.getFirstSelectedOption().getText() + "\r\n");
 
-        /* Option Value Comparison using SoftAssert/Assert */
+        /* Option Value Comparison using SoftAssert */
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(langElem.getFirstSelectedOption().getText(), "English");
 
@@ -64,7 +62,7 @@ public class TC002 extends InitializationClass{
 
         softAssert.assertAll();
 
-     //   Thread.sleep(5000);
+     
 
     }
 
