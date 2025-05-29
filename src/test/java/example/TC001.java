@@ -45,7 +45,6 @@ public class TC001 extends InitializationClass {
 
         Select sortType =  new Select(driver.findElement(By.id("s-result-sort-select")));
         sortType.selectByVisibleText("Featured");
-       // System.out.println("Results are sorted descendingly");
         Thread.sleep(5000);
 
 
@@ -68,9 +67,7 @@ public class TC001 extends InitializationClass {
     private  int getFlipKartPrice() throws InterruptedException {
 
         driver.get("https://www.flipkart.com");
-      //  String pageTitle = driver.getTitle();
-       // Thread.sleep(2000);
-
+     
         WebElement searchBox = driver.findElement(By.xpath("//input[@name='q']"));
         searchBox.sendKeys("iPhone 16 Pro Max 256 GB phone", Keys.ENTER);
        // driver.findElement(By.xpath("//button[@class='_2iLD__']")).click();
@@ -81,7 +78,6 @@ public class TC001 extends InitializationClass {
         Thread.sleep(2000);
 
         ArrayList productPrice = (ArrayList) driver.findElements(By.xpath("//div[@class='Nx9bqj _4b5DiR']"));
-     //   Thread.sleep(2000);
         System.out.println("Total Number of products: " + productPrice.size());
         WebElement listedElement = (WebElement) productPrice.get(0);
         String[] price = listedElement.getText().split(",");
